@@ -1,0 +1,6 @@
+Dear Customer,
+Your transaction of Rs. ${transaction.amount} of ${transaction.service} is refunded into your wallet .
+Transaction ID : ${transaction.transactionRefNo}
+Please try it again later. For assistance mail us on TriPaycare@vijayabank.co.in. Keep using TriPay.
+Thanks,  
+TriPay

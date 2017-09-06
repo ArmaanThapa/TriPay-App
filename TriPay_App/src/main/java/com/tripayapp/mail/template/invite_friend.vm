@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TriPay</title>
+</head>
+
+<div class="section" style="width: 500px; margin-top: 20px; font-family: Arial, Helvetica, sans-serif; background: rgba(231,231,231,1.00);">
+    <div class="section" style=" margin: 10px 0px 0px 0px; padding: 20px; font-size: 18px; line-height: 18px;">
+
+        <div class="box" style="height: 30px; margin-bottom: 5px; background: white; padding: 20px;">
+            <img src="cid:vpaylogo" alt="TriPay">
+        </div>
+
+        <div style="height: 250px; background: white; padding: 10px; ">
+            <p style="font-weight: bold;">Dear User,</p>
+            <p style="font-weight: bold; line-height: 1.5; margin-bottom: 30px;">You have been invited to TriPay. <br/>Go to the link below and <br/>download the application now</p>
+            <a href="http://goo.gl/07Kf4u" style="font-size: 14px; font-weight: bold; color: #FFF; background: #17bcc8; text-decoration: none; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -o-border-radius: 0px; padding: 8px 15px;">
+                DOWNLOAD
+            </a>
+            <p style="font-size: 15px; line-height: 1.5;">Thank you<br>TriPay</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

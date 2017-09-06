@@ -1,0 +1,675 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.topline {
+	height: 6px;
+	background: #035098;
+}
+
+.navbar-right {
+	padding-top: 0px;
+	height: 70px;
+}
+
+.navbar-right li {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	float: left;
+}
+
+.navbar-right li p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: -10px;
+}
+
+.navbar-header {
+	
+}
+/* Account ============================= */
+#Account {
+	margin-bottom: 2%;
+	background: url("/resources/images/main/bg.jpg");
+}
+
+#Account legend {
+	font-size: 25px;
+	margin-bottom: 40px;
+}
+
+#Account hr {
+	margin-top: -5px;
+	margin-bottom: 10px;
+	color: #FFFFFF;
+}
+
+#Account p {
+	color: gray;
+	font-weight: bold;
+}
+
+/*#Account img{
+				border: 5px solid gray;
+				margin-top: 60px;
+				margin-bottom: 20px;
+							}*/
+#Account h3 {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#Account h4 {
+	font-weight: bold;
+	background: #ec2029;
+	color: white;
+	width: 100%;
+	height: 35px;
+	padding: 10px;
+}
+
+#foto {
+	margin-top: 50px;
+	height: 100%;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.foto {
+	border-radius: 50%;
+	border-width: 1px;
+	border-style: solid;
+	width: 232px;
+	height: 232px;
+	overflow: hidden;
+	display: inline-block;
+	margin-top: 50px;
+}
+
+.title {
+	font-size: 40px;
+	line-height: 72px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.sub-title {
+	font-size: 26px;
+	margin-top: -15px;
+}
+
+/* settings ============================= */
+#settings {
+	background: #F8F2F2;
+	padding-top: 35px;
+	padding-bottom: 40px;
+}
+
+#settings .line {
+	background: red;
+	width: 100%;
+	height: 5px;
+	margin-bottom: 30px;
+}
+
+/* InviteFriend============================== */
+#InviteFriend {
+	
+}
+
+/*-----------main------------*/
+#main {
+	text-align: center;
+	height: 10%;
+	background: #035098;
+}
+
+#main a {
+	color: #FFFFFF;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	margin-right: 3%;
+}
+
+/* receipts ===========================================*/
+#receipts {
+	overflow-y: auto;
+	height: 440px;
+}
+
+#receipts thead th {
+	padding-bottom: 15px;
+	padding-top: 15px;
+	color: gray;
+}
+
+/*----------Mobile Topup-------------*/
+.background {
+	background: #035098;
+	height: 6em;
+}
+
+#box {
+	background: #FFFFFF;
+	height: 450px;
+	margin-top: -80px;
+	-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+}
+
+/*--------------------bill payment---------------------*/
+#bill_box {
+	background: #FFFFFF;
+	height: 450px;
+	margin-top: -80px;
+	-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+}
+
+#bill_box .box {
+	height: 32.1em;
+	width: 10px;
+	margin-left: 95.6%;
+	background: #6f6f6f;
+	position: absolute;
+	border-radius: 20px 0px 0px 20px;
+	-moz-border-radius: 20px 0px 0px 20px;
+	-webkit-border-radius: 20px 0px 0px 20px;
+	border: 0px solid #000000;
+}
+
+#bill_box .nav-pills {
+	margin-left: 12%;
+	margin-top: 3%;
+}
+
+#bill_payment #menu1 {
+	margin-top: -21px;
+}
+/*--------------send money-----------------------*/
+#money_box {
+	background: #FFFFFF;
+	height: 450px;
+	margin-top: -80px;
+	-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+}
+
+#Prepaid {
+	background: #e4edf4;
+	height: 70px;
+	text-align: center;
+}
+
+#sendmoney #menu1 {
+	margin-top: -23px;
+}
+
+.box {
+	height: 32.1em;
+	width: 10px;
+	margin-left: 94%;
+	background: #6f6f6f;
+	position: absolute;
+	border-radius: 20px 0px 0px 20px;
+	-moz-border-radius: 20px 0px 0px 20px;
+	-webkit-border-radius: 20px 0px 0px 20px;
+	border: 0px solid #000000;
+}
+
+.tab-content {
+	margin-top: 50px;
+}
+
+.nav-pills {
+	margin-left: 15%;
+	margin-top: 4%;
+}
+
+.nav-pills>.active>a, .nav-pills>.active>a:hover, .nav-pills>li>a:hover
+	{
+	font-weight: bold;
+	border-radius: 0px;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #035098;
+	color: #000 !important;
+	background-color: transparent !important;
+}
+
+.nav-pills>li>a {
+	border-radius: 2px;
+	color: rgba(0, 0, 0, 1.00);
+	font-family: 'Ubuntu', sans-serif;
+}
+
+/*------Prepaid ------------------------------- */
+.group_1 {
+	position: relative;
+	margin-bottom: 20px;
+	margin-left: 12%;
+}
+
+input {
+	font-size: 18px;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 86%;
+	border: none;
+	border-bottom: 1px solid #757575;
+}
+
+input:focus {
+	outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+	color: #999;
+	font-size: 15px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+	top: -13px;
+	font-size: 14px;
+	color: #5264AE;
+}
+
+/* Browse Plans  ====================================*/
+.table-fixed tbody {
+	height: 400px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td,
+	.table-fixed th {
+	display: block;
+}
+
+.table-fixed tbody td, .table-fixed thead>tr>th {
+	float: left;
+	border-bottom-width: 0;
+}
+
+.table-fixed tbody tr {
+	/* margin-top: 20px; */
+	
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+	position: relative;
+	display: block;
+	width: 86%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #5264AE;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+	left: 50%;
+}
+
+.bar:after {
+	right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+	width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	-moz-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@
+-webkit-keyframes inputHighlighter {from { background:#5264AE;
+	
+}
+
+to {
+	width: 0;
+	background: transparent;
+}
+
+}
+@
+-moz-keyframes inputHighlighter {from { background:#5264AE;
+	
+}
+
+to {
+	width: 0;
+	background: transparent;
+}
+
+}
+@
+keyframes inputHighlighter {from { background:#5264AE;
+	
+}
+
+to {
+	width: 0;
+	background: transparent;
+}
+
+}
+.fa {
+	
+}
+
+/*--------------------------------@media-------------*/
+@media all and (max-width: 767px) {
+	.form {
+		margin-top: 25px;;
+	}
+	.btn {
+		margin-top: 40px;
+	}
+}
+
+@media all and (max-width: 1200px) {
+	.nav-pills {
+		margin-left: 8%;
+		margin-top: 4%;
+	}
+	#box {
+		background: #FFFFFF;
+		height: 375px;
+		margin-top: -80px;
+		-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	}
+	.carousel-inner {
+		margin-left: 5px;
+	}
+	.box {
+		height: 26.8em;
+		width: 10px;
+		margin-left: 94%;
+		background: #6f6f6f;
+		position: absolute;
+		border-radius: 20px 0px 0px 20px;
+		-moz-border-radius: 20px 0px 0px 20px;
+		-webkit-border-radius: 20px 0px 0px 20px;
+		border: 0px solid #000000;
+	}
+	.group_1 {
+		position: relative;
+		margin-bottom: 23px;
+		margin-top: -10px;
+		margin-left: 12%;
+	}
+
+	/*---------------send money-----------------------*/
+	#money_box {
+		background: #FFFFFF;
+		height: 410px;
+		margin-top: -80px;
+		-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	}
+	#money_box 	.carousel-inner {
+		margin-left: 5px;
+		width: 99%;
+	}
+	#money_box 	.box {
+		height: 29.3em;
+		width: 10px;
+		margin-left: 94%;
+		background: #6f6f6f;
+		position: absolute;
+		border-radius: 20px 0px 0px 20px;
+		-moz-border-radius: 20px 0px 0px 20px;
+		-webkit-border-radius: 20px 0px 0px 20px;
+		border: 0px solid #000000;
+	}
+}
+
+@media all and (max-width: 990px) {
+	#Prepaid {
+		margin-top: -30px;
+	}
+	.nav-pills {
+		margin-left: 30%;
+		padding: 10px;
+		text-align: center;
+	}
+	.box {
+		display: none;
+	}
+	#mycarousel {
+		display: none;
+	}
+	#box {
+		background: #FFFFFF;
+		height: 400px;
+		margin-top: -80px;
+		-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	}
+	/*---------------send money-----------------------*/
+	#money_box {
+		background: #FFFFFF;
+		height: 420px;
+		margin-top: -80px;
+		-webkit-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		-moz-box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+		box-shadow: -1px 1px 47px -7px rgba(0, 0, 0, 0.67);
+	}
+	#money_box #menu1 .btn {
+		margin-top: 0px;
+	}
+}
+
+@media all and (max-width: 555px) {
+	#Prepaid {
+		margin-top: -20px;
+	}
+	.nav-pills {
+		margin-left: 1%;
+		width:;
+		padding: 10px;
+		text-align: center;
+	}
+	.dropdown-content {
+		left: 0;
+	}
+}
+
+@media all and (max-width: 478px) {
+	#bill_payment .nav-pills {
+		margin-left: -10px;
+		padding-top: 20px;
+		float: left;
+		margin-top: 10px;
+	}
+}
+
+/*-------------------footer------------------*/
+footer {
+	background: #FCFCFC;
+	margin-top: 10%;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.footer-links {
+	margin-top: 10%;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+footer a {
+	color: #3F3F3F;
+}
+
+.help {
+	padding-top: 15px;
+	padding-bottom: 10px;
+	height: 10%;
+	background: #ff0000;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+footer img {
+	padding-bottom: 8px;
+}
+
+.footer-links {
+	margin-top: 16px;
+}
+
+/*--------------------dropdown---------------------------*/
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	margin-top: 50px;
+	display: none;
+	position: fixed;
+	background-color: #f9f9f9;
+	min-width: 220px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 90;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content {
+	right: 0;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.fa {
+	color: #0a5298;
+	margin-right: 10px;
+}
+
+/*----------------------about us----------------------------*/
+#aboutus {
+	background: #FFFFFF;
+	margin-top: -80px;
+	-webkit-box-shadow: -1px -11px 41px -12px rgba(0, 0, 0, 0.37);
+	-moz-box-shadow: -1px -11px 41px -12px rgba(0, 0, 0, 0.37);
+	box-shadow: -1px -11px 41px -12px rgba(0, 0, 0, 0.37);
+}
+
+#aboutus p {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#aboutus h2 {
+	margin-left: 10px;
+}
+
+.Accolades h1 {
+	text-align: center;
+	font-weight: bold;
+	color: gray;
+}
+
+.Accolades img {
+	margin-bottom: -60px;
+}
+
+@media all and (max-width: 478px) {
+	.Accolades img {
+		margin-bottom: -00px;
+	}
+	/*-----------------------control-----------------------------*/
+	#Partner input {
+		background: rgba(0, 0, 0, 1.00);
+	}
+
+	/*-----------------------profil-------------------------------*/
+
+	/*------------------------css code for spinner-------------------*/
+	.no-js #loader {
+		display: none;
+	}
+	.js #loader {
+		display: block;
+		position: absolute;
+		left: 100px;
+		top: 0;
+	}
+	.se-pre-con {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100p%;
+		height: 100%;
+		z-index: 9999;
+		background: url(images/pq.gif) center no-repeat #fff;
+	}
+}

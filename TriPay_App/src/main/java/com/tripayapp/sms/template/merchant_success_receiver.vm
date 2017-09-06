@@ -1,0 +1,6 @@
+Dear Customer,
+You have successfully received Rs. ${transaction.amount} from Mobile Number ${info} on ${transaction.created}.
+Transaction Id : ${transaction.transactionRefNo}
+Hope you have pleasant experience.
+Thanks, 
+TriPay 

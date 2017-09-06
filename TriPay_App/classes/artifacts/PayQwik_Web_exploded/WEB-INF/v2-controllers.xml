@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- API CONTROLLER -->
+	<bean class="com.payqwikapp.controller.api.v2.BrowsePlansController">
+		<constructor-arg ref="telcoApi" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.MpinController">
+		<constructor-arg ref="mpinValidation" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.MainController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.AjaxController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="merchantApi" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.LoginController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="authenticationManager" />
+		<constructor-arg ref="sls" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.RegisterController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="registerValidation" />
+		<constructor-arg ref="mobileOTPValidation" />
+		<constructor-arg ref="emailOTPValidation" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.UserController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="registerValidation" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="sessionRegistry" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.SendMoneyController">
+		<constructor-arg ref="sendMoneyApi" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="sendMoneyValidation" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="sessionRegistry" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.PayAtStoreController">
+		<constructor-arg ref="payStoreValidation" />
+		<constructor-arg ref="sendMoneyApi" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="sessionRegistry" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.AdminController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="merchantApi" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="messageLogApi"/>
+		<constructor-arg ref="emailLogApi"/>
+		<constructor-arg ref="registerValidation" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.LoadMoneyController">
+		<constructor-arg ref="ebsApi" />
+		<constructor-arg ref="ebsValidation" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionValidation" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.BillPaymentController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="topupAndBillPaymentApi" />
+		<constructor-arg ref="dthBillPaymentValidation" />
+		<constructor-arg ref="gasBillPaymentValidation" />
+		<constructor-arg ref="insuranceBillPaymentValidation" />
+		<constructor-arg ref="electricityBillPaymentValidation" />
+		<constructor-arg ref="landlineBillPaymentValidation" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="sessionRegistry" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.RewardController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="sessionRegistry" />
+	</bean>
+
+	<bean class="com.payqwikapp.controller.api.v2.TopupController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="topupAndBillPaymentApi" />
+		<constructor-arg ref="mobileTopupValidation" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+</beans>

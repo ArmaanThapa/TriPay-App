@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="tripaydb">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- User Tables -->
+		<class>com.tripayapp.entity.User</class>
+		<class>com.tripayapp.entity.UserDetail</class>
+		<class>com.tripayapp.entity.UserSession</class>
+
+		<!--Utility Tables-->
+		<class>com.tripayapp.entity.PQVersion</class>
+		<class>com.tripayapp.entity.APIConstant</class>
+
+		<!--Third Party Tables-->
+		<class>com.tripayapp.entity.PGDetails</class>
+		<class>com.tripayapp.entity.MRequestLog</class>
+		<class>com.tripayapp.entity.TPTransaction</class>
+		<class>com.tripayapp.entity.Banks</class>
+		<class>com.tripayapp.entity.BankDetails</class>
+		<!-- Account and Transactions Table -->
+
+		<class>com.tripayapp.entity.VBankAccountDetail</class>
+		<class>com.tripayapp.entity.PQAccountDetail</class>
+		<class>com.tripayapp.entity.PQTransaction</class>
+		<class>com.tripayapp.entity.PQAccountType</class>
+		<class>com.tripayapp.entity.PQService</class>
+		<class>com.tripayapp.entity.PQServiceType</class>
+		<class>com.tripayapp.entity.PQOperator</class>
+		<class>com.tripayapp.entity.PQCommission</class>
+
+		<!-- LOG Tables -->
+		<class>com.tripayapp.entity.SessionLog</class>
+		<class>com.tripayapp.entity.MessageLog</class>
+		<class>com.tripayapp.entity.EmailLog</class>
+		<class>com.tripayapp.entity.LoginLog</class>
+		<class>com.tripayapp.entity.SharePointsLog</class>
+		<class>com.tripayapp.entity.InviteLog</class>
+
+		<!-- Telco MAP -->
+		<class>com.tripayapp.entity.TelcoCircle</class>
+		<class>com.tripayapp.entity.TelcoMap</class>
+		<class>com.tripayapp.entity.TelcoOperator</class>
+		<class>com.tripayapp.entity.TelcoPlans</class>
+		
+		<!-- Promo Code Table  -->
+		<class>com.tripayapp.entity.PromoCode</class>
+		<class>com.tripayapp.entity.RedeemCode</class>
+		<class>com.tripayapp.entity.PromoServices</class>
+
+		<!-- Bank Transfer -->
+		<class>com.tripayapp.entity.BankTransfer</class>
+		<class>com.tripayapp.entity.MBankTransfer</class>
+		
+		<!-- BUS Tables -->
+		<class>com.tripayapp.entity.TravelBusTransaction</class>
+		<class>com.tripayapp.entity.TravelBusDetail</class>
+		<class>com.tripayapp.entity.TravelSeatDetail</class>
+		<class>com.tripayapp.entity.TravelUserDetail</class>
+		<class>com.tripayapp.entity.ClientDetail</class>
+
+		<!--I2Space BUS-->
+		<class>com.tripayapp.entity.BusDetails</class>
+		<class>com.tripayapp.entity.PassengerDetails</class>
+		<class>com.tripayapp.entity.BusTripDetails</class>
+		<class>com.tripayapp.entity.BusPassengerTrip</class>
+
+		<!--Location Details-->
+		<class>com.tripayapp.entity.LocationDetails</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.ejb.cfgfile" value="hibernate.cfg.xml" />
+		</properties>
+	</persistence-unit>
+</persistence>

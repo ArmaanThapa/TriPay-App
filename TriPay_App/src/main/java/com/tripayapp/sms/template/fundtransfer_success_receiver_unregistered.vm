@@ -1,0 +1,5 @@
+Dear  ${user.username}, 
+Your TriPay wallet account has been credited with Rs. ${transaction.amount} from ${info}
+Please download TriPay app from play store at http://goo.gl/07Kf4u and enjoy our services.
+Thank you, 
+TriPay

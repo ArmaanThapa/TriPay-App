@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="accountCreator" class="com.tripayapp.startup.AccountCreator"
+		  init-method="create">
+		<constructor-arg ref="pQServiceTypeRepository" />
+		<constructor-arg ref="pQOperatorRepository" />
+		<constructor-arg ref="pQServiceRepository" />
+		<constructor-arg ref="commissionApi"/>
+	</bean>
+
+	<bean id="startupCreator" class="com.tripayapp.startup.StartupCreator"
+		init-method="create">
+		<constructor-arg ref="userRepository" />
+		<constructor-arg ref="passwordEncoder" />
+		<constructor-arg ref="userDetailRepository" />
+		<constructor-arg ref="pQAccountDetailRepository" />
+		<constructor-arg ref="pQAccountTypeRepository" />
+	</bean>
+
+<!-- 	<bean id="bankCreator" class="com.tripayapp.startup.BankCreator"
+		  init-method="create">
+		<constructor-arg ref="banksRepository" />
+		<constructor-arg ref="bankDetailRepository"/>
+	</bean>
+ -->
+	<!--<bean id="telcoCreator" class="com.tripayapp.startup.TelcoCreator"-->
+		<!--init-method="create">-->
+		<!--<constructor-arg ref="telcoApi" />-->
+	<!--</bean>-->
+
+	<bean id="locationCreator" class="com.tripayapp.startup.LocationCreator"
+	init-method="create">
+	<constructor-arg ref="locationDetailsRepository" />
+	</bean>
+
+
+
+	<!--<bean id="versionCreator" class="com.tripayapp.startup.VersionCreator"-->
+		  <!--init-method="create">-->
+		<!--<constructor-arg ref="pQVersionRepository" />-->
+	<!--</bean>-->
+
+	<!--<bean id="merchantCreator" class="com.tripayapp.startup.MerchantCreator"-->
+		  <!--init-method="create">-->
+		<!--<constructor-arg ref="userRepository"/>-->
+		<!--<constructor-arg ref="userDetailRepository"/>-->
+		<!--<constructor-arg ref="pGDetailsRepository"/>-->
+		<!--<constructor-arg ref="pQServiceRepository"/>-->
+		<!--<constructor-arg ref="pQCommissionRepository"/>-->
+
+	<!--</bean>-->
+</beans>

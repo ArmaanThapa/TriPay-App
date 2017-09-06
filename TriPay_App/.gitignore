@@ -1,0 +1,106 @@
+# Directories #
+/build/
+/bin/
+target/
+/out/
+.idea/
+# OS Files #
+.DS_Store
+ 
+*.class
+*.log
+ 
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+#intellij idea folder#
+.idea
+
+*.iml
+############exclude logs ############
+
+/**/*.gz
+
+######################
+# Windows
+######################
+ 
+# Windows image file caches
+Thumbs.db 
+ 
+# Folder config file
+Desktop.ini
+ 
+######################
+# OSX
+######################
+ 
+.DS_Store
+.svn
+ 
+# Thumbnails
+._*
+ 
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+ 
+ 
+######################
+# Eclipse
+######################
+ 
+*.pydevproject
+.project
+.metadata
+.idea
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.idea/
+.loadpath
+/src/main/resources/rebel.xml
+
+# External tool builders
+.externalToolBuilders/
+ 
+# Locally stored "Eclipse launch configurations"
+*.launch
+ 
+# CDT-specific (C/C++ Development Tooling
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+ 
+# PDT-specific
+.buildpath
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/

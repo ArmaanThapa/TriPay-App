@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+	<bean id="registerValidation" class="com.tripayapp.validation.RegisterValidation">
+		<constructor-arg ref="userRepository" />
+		<constructor-arg ref="passwordEncoder" />
+		<constructor-arg ref="userDetailRepository" />
+		<constructor-arg ref="locationDetailsRepository"/>
+	</bean>
+
+	<bean id="mobileOTPValidation" class="com.tripayapp.validation.MobileOTPValidation">
+		<constructor-arg ref="userRepository" />
+	</bean>
+
+
+	<bean id="loginValidation" class="com.tripayapp.validation.LoginValidation">
+	</bean>
+
+	<bean id="mpinValidation" class="com.tripayapp.validation.MpinValidation">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="passwordEncoder" />
+	</bean>
+
+	<bean id="emailOTPValidation" class="com.tripayapp.validation.EmailOTPValidation">
+		<constructor-arg ref="userRepository" />
+		<constructor-arg ref="userDetailRepository" />
+	</bean>
+
+	<bean id="loadMoneyValidation" class="com.tripayapp.validation.LoadMoneyValidation">
+	</bean>
+
+	<bean id="inviteFriendValidation" class="com.tripayapp.validation.InviteFriendValidation">
+	</bean>
+
+	<bean id="payStoreValidation" class="com.tripayapp.validation.PayStoreValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="mobileTopupValidation" class="com.tripayapp.validation.MobileTopupValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="vNetValidation" class="com.tripayapp.validation.VNetValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="dthBillPaymentValidation" class="com.tripayapp.validation.DTHBillPaymentValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="insuranceBillPaymentValidation"
+		class="com.tripayapp.validation.InsuranceBillPaymentValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="gasBillPaymentValidation" class="com.tripayapp.validation.GasBillPaymentValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="electricityBillPaymentValidation"
+		class="com.tripayapp.validation.ElectricityBillPaymentValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="landlineBillPaymentValidation" class="com.tripayapp.validation.LandlineBillPaymentValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="redeemCouponValidation" class="com.tripayapp.validation.RedeemCouponValidation"></bean>
+
+	<bean id="sendMoneyValidation" class="com.tripayapp.validation.SendMoneyValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="ccavenueValidation" class="com.ccavenue.validation.CCAvenueValidation">
+		<constructor-arg ref="userApi" />
+	</bean>
+
+	<bean id="ebsValidation" class="com.ebs.validation.EBSValidation">
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean id="transactionValidation" class="com.tripayapp.validation.TransactionValidation">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="commissionApi" />
+	</bean>
+	
+	<bean id="promoCodeValidation" class="com.tripayapp.validation.PromoCodeValidation">
+	</bean>
+	
+	<bean id="busValidation" class="com.tripayapp.validation.BusValidation">
+	</bean>
+	
+	
+</beans>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- API CONTROLLER -->
+	<bean class="com.tripayapp.controller.api.v1.BrowsePlansController">
+		<constructor-arg ref="telcoApi" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.MpinController">
+		<constructor-arg ref="mpinValidation" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.MainController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionLogApi" />
+		<constructor-arg ref="transactionApi" /> 
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.AjaxController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="merchantApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="pQServiceRepository" />
+		<constructor-arg ref="banksRepository"/>
+		<constructor-arg ref="bankDetailRepository"/>
+		<constructor-arg ref="pQServiceTypeRepository"/>
+		<constructor-arg ref="pQCommissionRepository"/>
+
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.LoginController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="authenticationManager" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sls" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="loginValidation"/>
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.RegisterController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="registerValidation" />
+		<constructor-arg ref="mobileOTPValidation" />
+		<constructor-arg ref="emailOTPValidation" />
+
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.UserController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="registerValidation" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="transactionValidation"/>
+		<constructor-arg ref="pQServiceRepository"/>
+
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.UserAccountController">
+		<constructor-arg ref="inviteFriendValidation" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="userSessionRepository" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.SendMoneyController">
+		<constructor-arg ref="sendMoneyApi" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="sendMoneyValidation" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="pQServiceRepository" />
+		<constructor-arg ref="banksRepository" />
+		<constructor-arg ref="bankDetailRepository" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.PayAtStoreController">
+		<constructor-arg ref="payStoreValidation" />
+		<constructor-arg ref="sendMoneyApi" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="pQServiceRepository" />
+		<constructor-arg ref="tmerchantApi" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.AdminController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="merchantApi" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="messageLogApi" />
+		<constructor-arg ref="emailLogApi" />
+		<constructor-arg ref="registerValidation" />
+		<constructor-arg ref="promoCodeApi" />
+		<constructor-arg ref="promoCodeValidation" />
+		<constructor-arg ref="adminApi"/>
+		<constructor-arg ref="sendMoneyApi"/>
+		<constructor-arg ref="pQServiceRepository"/>
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.MerchantController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="tPTransactionRepository"/>
+		<constructor-arg ref="pGDetailsRepository"/>
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="registerValidation"/>
+		<constructor-arg ref="transactionValidation"/>
+		<constructor-arg ref="sendMoneyApi"/>
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.VersionController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.LoadMoneyController">
+		<constructor-arg ref="ebsApi" />
+		<constructor-arg ref="ebsValidation" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="pQServiceRepository" />
+		<constructor-arg ref="vNetValidation"/>
+		<constructor-arg ref="vNetApi"/>
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.BillPaymentController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="topupAndBillPaymentApi" />
+		<constructor-arg ref="dthBillPaymentValidation" />
+		<constructor-arg ref="gasBillPaymentValidation" />
+		<constructor-arg ref="insuranceBillPaymentValidation" />
+		<constructor-arg ref="electricityBillPaymentValidation" />
+		<constructor-arg ref="landlineBillPaymentValidation" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.RewardController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="sessionRegistry" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.TopupController">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="topupAndBillPaymentApi" />
+		<constructor-arg ref="mobileTopupValidation" />
+		<constructor-arg ref="transactionValidation" />
+		<constructor-arg ref="sessionRegistry" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.TestController">
+		<constructor-arg ref="mailSenderApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="pQServiceRepository" />
+		<constructor-arg ref="topupAndBillPaymentApi" />
+		<constructor-arg ref="userApi"/>
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.CallBackController">
+		<constructor-arg ref="topupAndBillPaymentApi" />
+	</bean>
+
+	<bean class="com.tripayapp.controller.api.v1.RedeemController">
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="persistingSessionRegistry" />
+		<constructor-arg ref="promoCodeApi" />
+		<constructor-arg ref ="redeemCodeApi"/>
+	</bean>
+	
+	<bean class="com.tripayapp.controller.travel.BusController">
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="persistingSessionRegistry" />
+		<constructor-arg ref="bookBusTicketApi" />
+		<constructor-arg ref="busValidation" />
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="pQServiceRepository" />
+	</bean>
+	
+</beans>

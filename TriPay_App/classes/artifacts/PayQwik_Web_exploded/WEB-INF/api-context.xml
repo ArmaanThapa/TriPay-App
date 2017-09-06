@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<!-- User -->
+	<bean id="userApi" class="com.payqwikapp.api.impl.UserApi">
+		<constructor-arg ref="userRepository" />
+		<constructor-arg ref="userDetailRepository" />
+		<constructor-arg ref="pQAccountDetailRepository" />
+		<constructor-arg ref="pQAccountTypeRepository" />
+		<constructor-arg ref="pQServiceTypeRepository" />
+		<constructor-arg ref="pQTransactionRepository" />
+		<constructor-arg ref="loginLogRepository" />
+		<constructor-arg ref="passwordEncoder" />
+		<constructor-arg ref="mailSenderApi" />
+		<constructor-arg ref="smsSenderApi" />
+	</bean>
+
+	<!-- Session Handler -->
+	<bean id="sessionLogApi" class="com.payqwikapp.api.impl.SessionLogApi">
+		<constructor-arg ref="sessionLogRepository" />
+		<constructor-arg ref="sessionApi" />
+	</bean>
+
+	<bean id="sessionApi" class="com.payqwikapp.api.impl.SessionApi">
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="userRepository" />
+		<constructor-arg value="0" />
+	</bean>
+
+	<!-- 
+	Properties props = new Properties();
+	props.put("mail.smtp.auth", "true");
+	props.put("mail.smtp.starttls.enable", "true");
+	props.put("mail.smtp.auth.plain.disable", true);
+	props.put("mail.smtp.ssl.trust", "webmail.vijayabank.co.in");
+	
+	props.put("mail.smtp.host", "webmail.vijayabank.co.in");
+	props.put("mail.smtp.port", "25"); 
+	-->
+	
+	<!-- Mail Sender -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="webmail.vijayabank.co.in" />
+		<property name="port" value="25" />
+		<property name="username" value="vpayqwikcare@vijayabank.co.in" />
+		<property name="password" value="vijaya@123" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.auth.plain.disable">true</prop>
+				<prop key="mail.smtp.ssl.trust">webmail.vijayabank.co.in</prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="carepayqwik@gmail.com" />
+		<property name="password" value="Payqwik123" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean> 
+	-->
+	
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<value>
+				resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</value>
+		</property>
+	</bean>
+
+	<bean id="mailSenderApi" class="com.payqwikapp.api.impl.MailSenderApi">
+		<property name="mailSender" ref="mailSender" />
+		<property name="velocityEngine" ref="velocityEngine" />
+		<property name="emailLogRepository" ref="emailLogRepository" />
+	</bean>
+
+	<bean id="smsSenderApi" class="com.payqwikapp.api.impl.SMSSenderApi">
+		<property name="velocityEngine" ref="velocityEngine" />
+		<property name="messageLogRepository" ref="messageLogRepository" />
+	</bean>
+
+	<!-- Transaction API -->
+	<bean id="transactionApi" class="com.payqwikapp.api.impl.TransactionApi">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="pQTransactionRepository" />
+		<constructor-arg ref="smsSenderApi" />
+		<constructor-arg ref="mailSenderApi" />
+		<constructor-arg ref="pGDetailsRepository"/>
+	</bean>
+
+	<!-- CCAvenue API -->
+	<bean id="responseHandlerApi" class="com.ccavenue.api.impl.ResponseHandlerApi">
+	</bean>
+	<bean id="requestHandlerApi" class="com.ccavenue.api.impl.RequestHandlerApi">
+	</bean>
+
+	<bean id="ccavenueApi" class="com.payqwikapp.api.impl.CCAvenueApi">
+		<constructor-arg ref="requestHandlerApi" />
+		<constructor-arg ref="responseHandlerApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="pQServiceTypeRepository" />
+		<constructor-arg ref="userSessionRepository" />
+		<constructor-arg ref="userApi" />
+	</bean>
+
+	<!-- EBS API -->
+	<bean id="ebsResponseHandlerApi" class="com.ebs.api.impl.EBSResponseHandlerApi">
+	</bean>
+	<bean id="ebsRequestHandlerApi" class="com.ebs.api.impl.EBSRequestHandlerApi">
+	</bean>
+
+	<bean id="ebsApi" class="com.payqwikapp.api.impl.EBSApi">
+		<constructor-arg ref="ebsRequestHandlerApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="pQServiceTypeRepository" />
+	</bean>
+
+	<bean id="sendMoneyApi" class="com.payqwikapp.api.impl.SendMoneyApi">
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="pQServiceTypeRepository" />
+	</bean>
+
+	<!-- Instant Pay API -->
+	<bean id="ipayTransactionApi" class="com.instantpay.api.impl.TransactionApi">
+	</bean>
+	<bean id="ipayValidationApi" class="com.instantpay.api.impl.ValidationApi">
+	</bean>
+
+	<bean id="topupAndBillPaymentApi" class="com.payqwikapp.api.impl.TopupAndBillPaymentApi">
+		<constructor-arg ref="ipayTransactionApi" />
+		<constructor-arg ref="ipayValidationApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg ref="pQServiceTypeRepository" />
+	</bean>
+
+	<!-- CronJob -->
+	<bean id="autoReverse" class="com.payqwikapp.cronjob.AutoReverse">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="transactionApi" />
+		<constructor-arg>
+			<bean class="org.springframework.transaction.support.TransactionTemplate">
+				<property name="transactionManager" ref="transactionManager" />
+				<property name="propagationBehaviorName" value="PROPAGATION_REQUIRES_NEW" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="telcoApi" class="com.payqwikapp.api.impl.TelcoApi">
+		<constructor-arg ref="telcoCircleRepository" />
+		<constructor-arg ref="telcoOperatorRepository" />
+		<constructor-arg ref="telcoPlansRepository" />
+		<constructor-arg ref="telcoMapRepository" />
+	</bean>
+
+	<bean id="transactionExcelView" class="com.payqwikapp.model.excel.TransactionExcelView">
+	</bean>
+
+	<bean id="adminApi" class="com.payqwikapp.api.impl.AdminApi">
+		<constructor-arg ref="merchantApi" />
+		<constructor-arg ref="messageLogRepository" />
+		<constructor-arg ref="emailLogRepository" />
+		<constructor-arg ref="userRepository" />
+	</bean>
+
+	<bean id="merchantApi" class="com.payqwikapp.api.impl.MerchantApi">
+		<constructor-arg ref="userApi" />
+		<constructor-arg ref="userRepository" />
+
+	</bean>
+
+	<bean id="messageLogApi" class="com.payqwikapp.api.impl.MessageLogApi">
+		<constructor-arg ref="messageLogRepository" />
+	</bean>
+
+	<bean id="emailLogApi" class="com.payqwikapp.api.impl.EmailLogApi">
+		<constructor-arg ref="emailLogRepository" />
+	</bean>
+
+
+</beans>

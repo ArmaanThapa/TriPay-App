@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.base}/logs/payqwik.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} -
+				%msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${catalina.base}/logs/payqwik.%d{yyyy-MM-dd}.%i.gz
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- Keep 10 days' worth of history -->
+			<maxHistory>10</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="IMPORT-LOG" class="ch.qos.logback.core.FileAppender">
+		<File>${catalina.base}/logs/payqwik-import.log</File>
+		<Append>false</Append>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} -
+				%msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+	<logger name="com.payqwik.startup" level="ERROR" additivity="false">
+		<appender-ref ref="IMPORT-LOG" />
+	</logger>
+
+	<logger name="org.springframework.data" level="ERROR" />
+	<logger name="org.springframework.security" level="ERROR" />
+	<logger name="com.payqwik" level="ALL" />
+	<logger name="org.springframework.ws.client.MessageTracing">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org.springframework.ws.server.MessageTracing">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org.apache.http.wire" level="DEBUG" />
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

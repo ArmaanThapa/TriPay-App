@@ -1,0 +1,4 @@
+Dear Customer,
+Your ${transaction.description} was successful. Hope you have pleasant experience.
+Thanks,
+TriPay

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<!--Third party Controllers-->
+	<bean class="com.thirdparty.controller.MerchantController">
+		<constructor-arg ref="tmerchantApi"/>
+		<constructor-arg ref="userApi"/>
+		<constructor-arg ref="transactionValidation"/>
+		<constructor-arg ref="userSessionRepository"/>
+		<constructor-arg ref="persistingSessionRegistry"/>
+		<constructor-arg ref="pQServiceRepository"/>
+	</bean>
+
+	<bean class="com.thirdparty.controller.LoginController">
+		<constructor-arg ref="userApi"/>
+		<constructor-arg ref="authenticationManager"/>
+		<constructor-arg ref="userSessionRepository"/>
+		<constructor-arg ref="sls"/>
+		<constructor-arg ref="sessionApi"/>
+	</bean>
+
+
+	<bean class="com.thirdparty.controller.RegistrationController">
+		<constructor-arg ref="userApi"/>
+		<constructor-arg ref="registerValidation"/>
+		<constructor-arg ref="mobileOTPValidation"/>
+		<constructor-arg ref="emailOTPValidation"/>
+	</bean>
+	
+	<!-- Travel Bus Controller-->
+	<!--<bean class="com.thirdparty.controller.TravelBusController">-->
+	     <!--<constructor-arg ref="userSessionRepository"/>-->
+		 <!--<constructor-arg ref="bookBusTicketApi"/>-->
+		 <!--<constructor-arg ref="persistingSessionRegistry"/>-->
+		 <!--<constructor-arg ref="userApi"/>-->
+		 <!--<constructor-arg ref="pQServiceRepository"/>-->
+	<!--</bean>-->
+	<!---->
+</beans>

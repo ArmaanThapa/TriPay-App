@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="startupCreator" class="com.payqwikapp.startup.StartupCreator"
+		init-method="create">
+		<constructor-arg ref="userRepository" />
+		<constructor-arg ref="passwordEncoder" />
+		<constructor-arg ref="userDetailRepository" />
+		<constructor-arg ref="pQAccountDetailRepository" />
+		<constructor-arg ref="pQAccountTypeRepository" />
+		<constructor-arg ref="pQServiceTypeRepository" />
+	</bean>
+
+	<bean id="telcoCreator" class="com.payqwikapp.startup.TelcoCreator"
+		init-method="create">
+		<constructor-arg ref="telcoApi" />
+	</bean>
+</beans>

@@ -1,0 +1,6 @@
+Dear Customer,
+Your last transaction of Rs. ${transaction.amount} on ${transaction.created} was unsuccessful. 
+Transaction Id : ${transaction.transactionRefNo}
+Please try it again later. For assistance mail us on TriPaycare@vijayabank.co.in. Keep using TriPay.
+Thanks,  
+TriPay

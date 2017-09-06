@@ -1,0 +1,6 @@
+Dear Customer,
+You have loaded Rs. ${transaction.amount} into TriPay on ${transaction.created}.
+Transaction Id : ${transaction.transactionRefNo}
+Keep enjoying the services of TriPay.
+Thanks,
+TriPay

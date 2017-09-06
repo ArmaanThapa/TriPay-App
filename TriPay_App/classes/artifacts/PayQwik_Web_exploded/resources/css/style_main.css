@@ -1,0 +1,243 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+	background:url(img/bg.jpg);
+}
+
+.topline{
+	height: 6px;
+	background: #035098;
+}
+
+footer{
+	width: 100%;
+	background: #fff9f9;
+	text-align:center;
+	min-height: 35px;
+}
+
+footer a{
+	padding-right: 8px;
+	padding-left: 8px;
+	color: #000000;
+	border-right:#e6e6e6 solid 1.5px;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 13px;
+}
+#mycarousel{
+	margin-top: -20px;
+	position:absolute;
+	z-index: -999;
+}
+#mycarousel p{
+	font-size:15px;
+	font-family: 'Ubuntu', sans-serif;
+
+}
+
+/*--------------------------------------form------------------------------------------------*/
+.navbar-right{ 
+margin-left: -30%;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+#login a{
+	font-size:11px;
+}
+#login .group 			  { 
+  position:relative;
+  margin-top: 5px;
+  float:left;
+  margin-left: 30px;
+}
+#login input 				{
+  font-size:14px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:200px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+#login .label 				 {
+  color:#999; 
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:5px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+  font-family: 'Ubuntu', sans-serif;
+  float:left;
+}
+
+/* active state */
+#login .input:focus ~ label, input:valid ~ label 		{
+  top:-10px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+#login .bar 	{ position:relative; display:block; width:200px;}
+.bar:before, .bar:after 	{
+  content:'';
+  height:1px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+/*-----------------signup---------------------------*/
+#signup .group 			  { 
+  position:relative;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+input 				{
+  font-size:10px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:90%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:5px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-10px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:90%;}
+.bar:before, .bar:after 	{
+  content:'';
+  height:1px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+#signup{
+	padding-top: -10px;
+
+}

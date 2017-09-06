@@ -1,0 +1,7 @@
+Dear Customer,
+You've successfully used promo code.
+Rs. ${transaction.amount} is credited to your account.
+Transaction Id : ${transaction.transactionRefNo}
+Keep using TriPay.
+Thanks,  
+TriPay

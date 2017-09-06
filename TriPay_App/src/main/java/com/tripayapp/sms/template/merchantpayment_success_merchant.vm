@@ -1,0 +1,8 @@
+Dear Merchant,
+You have received payment successfully.
+Transaction Id : ${transaction.transactionRefNo}
+Amount Rs. ${transaction.amount}
+Transaction Date : ${transaction.created} 
+
+Thanks,
+TriPay

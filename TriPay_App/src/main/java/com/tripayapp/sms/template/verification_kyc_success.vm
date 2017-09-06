@@ -1,0 +1,4 @@
+Dear ${user.userDetail.firstName},
+Congratulations, You're now ${user.accountDetail.accountType.name} user,
+Monthly Transaction Limit is now ${user.accountDetail.accountType.monthlyLimit}
+Thanks, TriPay
